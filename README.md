@@ -1,7 +1,7 @@
 # JSON_paths_to_terminal_value
 
 A program that takes a JSON object as input and outputs the path to every terminal value in the JSON structure.
-The program uses the json parser jar file from:
+The program uses the json parser jar file from either:
 
 https://mvnrepository.com/artifact/org.json/json/20140107
 
