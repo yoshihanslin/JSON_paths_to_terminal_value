@@ -2,9 +2,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.io.File;
+import java.lang.Exception;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 //get org.json jar file from:
 //https://mvnrepository.com/artifact/org.json/json/20140107
@@ -14,13 +17,23 @@ public class JSON {
 
 	public static void main(String[] args) {
 		
-		 StringBuilder jsonInput= new StringBuilder();
 		 
+ 		File file;
 		  if (args.length > 0) {
-		       jsonInput.append(args[0]);
+			  System.out.println("args[0] "+args[0]);
+			  file= new File(args[0]);
 		  }
-		  else { 
-		     // process STDIN
+		  else file= new File("JSON_Cases.txt");
+		try{
+			  Scanner sc = new Scanner(file); //throws FileNotFoundException if file not found
+			  while (sc.hasNextLine()){
+			    	jsonInput.append(sc.nextLine());
+			  }
+			  System.out.println("File found. Read JSON string from file.");
+		  }
+		  catch(Exception e) { 
+			System.out.println("File Not found. \nEnter input JSON below and press 'enter' twice :\n");
+		     // enter string input in the console
 		    Scanner scanner = new Scanner(System.in);
 			while (scanner.hasNextLine()) {
 				String hold = scanner.nextLine();
@@ -29,7 +42,7 @@ public class JSON {
 			}
 			scanner.close(); // Not required for stdin but good practice
 		   }
-//		     System.out.println(jsonInput.toString());
+		   System.out.println("Input JSON:\n"+jsonInput);
 		     
 		
 		     try {
