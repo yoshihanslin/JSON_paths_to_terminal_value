@@ -16,14 +16,15 @@ import org.json.JSONObject;
 public class JSON {
 
 	public static void main(String[] args) {
-		
+		StringBuilder jsonInput= new StringBuilder();	
 		 
  		File file;
 		  if (args.length > 0) {
 			  System.out.println("args[0] "+args[0]);
 			  file= new File(args[0]);
 		  }
-		  else file= new File("JSON_Cases.txt");
+		  else 
+			  file= new File("JSON_Cases2.txt");
 		try{
 			  Scanner sc = new Scanner(file); //throws FileNotFoundException if file not found
 			  while (sc.hasNextLine()){
@@ -50,7 +51,7 @@ public class JSON {
 		            String prevNodesList= "";
 		            JSONObject result = new JSONObject();
 		            parseJSON(j, prevNodesList, result);
-		            System.out.println(result);
+		            System.out.println("Output JSON:\n"+result);
 
 		     }  catch (JSONException e) {
 		            e.printStackTrace();
@@ -99,3 +100,4 @@ public static void parseJSON(JSONObject j, String prevNodesList, JSONObject resu
   }
 
 }
+
