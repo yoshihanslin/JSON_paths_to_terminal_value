@@ -11,10 +11,10 @@ Input is a string structured as a JSON object.
 If using the Linux console:
 - compile the java file:
     javac JSON.java
-- execute the java file: 
-    java JSON <args[0] is your input JSON string>
+- execute the java file, with first argument as input file path: 
+    java JSON <your input file path>
     
-If you've executed the java file but have not entered any input, then type in input in console after execution:
+If you've executed the java file, and the input file is not found, then the console will ask for input JSON string:
 Press "enter" twice for the program to read the input successfully.
 
 Input:
