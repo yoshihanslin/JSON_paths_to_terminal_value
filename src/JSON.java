@@ -24,25 +24,25 @@ public class JSON {
 			  file= new File(args[0]);
 		  }
 		  else 
-			  file= new File("JSON_Cases2.txt");
-		try{
+			file= new File("JSON_Cases2.txt");
+			try{
 			  Scanner sc = new Scanner(file); //throws FileNotFoundException if file not found
 			  while (sc.hasNextLine()){
 			    	jsonInput.append(sc.nextLine());
 			  }
 			  System.out.println("File found. Read JSON string from file.");
-		  }
-		  catch(Exception e) { 
-			System.out.println("File Not found. \nEnter input JSON below and press 'enter' twice :\n");
-		     // enter string input in the console
-		    Scanner scanner = new Scanner(System.in);
-			while (scanner.hasNextLine()) {
-				String hold = scanner.nextLine();
-				if (!hold.equals("")) jsonInput.append(hold);
-				else break;
-			}
-			scanner.close(); // Not required for stdin but good practice
-		   }
+		  	}
+		  	catch(Exception e) { 
+				System.out.println("File Not found. \nEnter input JSON below and press 'enter' twice :\n");
+		     		// enter string input in the console
+		    		Scanner scanner = new Scanner(System.in);
+				while (scanner.hasNextLine()) {
+					String hold = scanner.nextLine();
+					if (!hold.equals("")) jsonInput.append(hold);
+					else break;
+				}
+				scanner.close(); // Not required for stdin but good practice
+		   	}
 		   System.out.println("Input JSON:\n"+jsonInput);
 		     
 		
