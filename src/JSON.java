@@ -43,7 +43,7 @@ public class JSON {
 				}
 				scanner.close(); // Not required for stdin but good practice
 		   	}
-		   System.out.println("Input JSON:\n"+jsonInput);
+		     System.out.println("Input JSON:\n"+jsonInput);
 		     
 		
 		     try {
